@@ -15,7 +15,7 @@ cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 # cap = cv2.VideoCapture('Video.mp4')
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-count = 500
+count = 0
 
 while True:
     ret, frame = cap.read()
@@ -44,7 +44,7 @@ while True:
     cv2.imshow('frame', frame)
 
     k = cv2.waitKey(1)
-    if k == 27 or count >= 1000:
+    if k == 27 or count >= 500:
         break
 
 cap.release()
